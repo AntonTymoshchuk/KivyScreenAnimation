@@ -1,0 +1,32 @@
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+<MyScreenManager>:
+    transition: FadeTransition()
+    HelloScreen:
+    OllehScreen:
+
+
+<HelloScreen>:
+    name: 'hello'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'hello'
+        Button:
+            text: 'continue'
+            on_press: app.root.current = 'olleh'
+
+
+<OllehScreen>:
+    name: 'olleh'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'olleh'
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                text: 'continue'
+                # on_press: app.root.current = 'hello'
+            Button:
+                text: 'back'
+                on_press: app.root.current = 'hello'
